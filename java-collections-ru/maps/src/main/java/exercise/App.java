@@ -8,9 +8,9 @@ import java.util.Arrays;
 
 public class App {
 
-    public static void main(String[] args) {
-        System.out.println(toString(getWordCount("the java is the best programming language java")));
-    }
+    //public static void main(String[] args) {
+    //    System.out.println(toString(getWordCount("the java is the best programming language java")));
+    //}
 
     public static Map getWordCount(String str) {
 
