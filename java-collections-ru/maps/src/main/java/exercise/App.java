@@ -32,11 +32,11 @@ public class App {
         StringBuilder stringBuilder= new StringBuilder("");
         var keySet = map.keySet();
 
-        stringBuilder.append("  {\n");
+        stringBuilder.append("// {\n");
         for (var key: keySet) {
-            stringBuilder.append("    " + key + ": " +  map.get(key) + "\n");
+            stringBuilder.append("//   " + key + ": " +  map.get(key) + "\n");
         }
-        stringBuilder.append("  }\n");
+        stringBuilder.append("// }\n");
 
         return stringBuilder.toString();
     }
