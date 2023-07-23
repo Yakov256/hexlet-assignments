@@ -10,6 +10,7 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(toString(getWordCount("the java is the best programming language java")));
+        System.out.println("---------------");
         Map wordsCount2 = App.getWordCount("");
         System.out.println(App.toString(wordsCount2));
     }
@@ -36,11 +37,11 @@ public class App {
         StringBuilder stringBuilder = new StringBuilder();
         var keySet = map.keySet();
 
-        stringBuilder.append("{");
+        stringBuilder.append("// {");
         for (var key: keySet) {
-            stringBuilder.append("\n  " + key + ": " +  map.get(key) + "\n");
+            stringBuilder.append("\n//   " + key + ": " +  map.get(key));
         }
-        stringBuilder.append("}");
+        stringBuilder.append("\n// }");
 
         return stringBuilder.toString();
     }
