@@ -34,9 +34,12 @@ public class App {
     }
 
     public static String toString(Map map) {
+        if (map.isEmpty()) {
+            return "{}";
+        }
+
         StringBuilder stringBuilder = new StringBuilder();
         var keySet = map.keySet();
-
         stringBuilder.append("// {");
         for (var key: keySet) {
             stringBuilder.append("\n//   " + key + ": " +  map.get(key));
