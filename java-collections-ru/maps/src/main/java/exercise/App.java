@@ -40,11 +40,11 @@ public class App {
 
         StringBuilder stringBuilder = new StringBuilder();
         var keySet = map.keySet();
-        stringBuilder.append("// {");
+        stringBuilder.append("{");
         for (var key: keySet) {
-            stringBuilder.append("\n//   " + key + ": " +  map.get(key));
+            stringBuilder.append("\n  " + key + ": " +  map.get(key));
         }
-        stringBuilder.append("\n// }");
+        stringBuilder.append("\n}");
 
         return stringBuilder.toString();
     }
