@@ -4,16 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 // BEGIN
-//import java.util.Arrays;
+import java.util.Arrays;
 
 public class App {
 
-    public static void main(String[] args) {
-        System.out.println(toString(getWordCount("the java is the best programming language java")));
-        System.out.println("---------------");
-        Map wordsCount2 = App.getWordCount("");
-        System.out.println(App.toString(wordsCount2));
-    }
+    //public static void main(String[] args) {
+    //    System.out.println(toString(getWordCount("the java is the best programming language java")));
+    //}
 
     public static Map getWordCount(String str) {
 
@@ -24,9 +21,7 @@ public class App {
             if (people.containsKey(currentStr)) {
                 people.put(currentStr, people.get(currentStr) + 1);
             } else {
-                if (!currentStr.isEmpty()) {
-                    people.put(currentStr, 1);
-                }
+                people.put(currentStr,1);
             }
         }
 
@@ -34,17 +29,14 @@ public class App {
     }
 
     public static String toString(Map map) {
-        if (map.isEmpty()) {
-            return "{}";
-        }
-
-        StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder stringBuilder= new StringBuilder("");
         var keySet = map.keySet();
-        stringBuilder.append("{");
+
+        stringBuilder.append("// {\n");
         for (var key: keySet) {
-            stringBuilder.append("\n  " + key + ": " +  map.get(key));
+            stringBuilder.append("//   " + key + ": " +  map.get(key) + "\n");
         }
-        stringBuilder.append("\n}");
+        stringBuilder.append("// }\n");
 
         return stringBuilder.toString();
     }
