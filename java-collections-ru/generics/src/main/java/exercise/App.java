@@ -44,13 +44,19 @@ class App {
     }
 
     public static boolean mapContainsMap(Map<String, String> map1, Map<String, String> map2) {
-        for (Object value : map1.values()) {
-            if (map2.containsValue(value)) {
-                return true;
+        boolean contains = true;
+
+        for (Entry<String, String> entry : map1.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+            if (!key.equals("title")) {
+                if (!map2.containsValue(value)) {
+                    contains = false;
+                }
             }
         }
 
-        return false;
+        return contains;
     }
 
     public static List<Map<String, String>> findWhere(List<Map<String, String>> books, Map<String, String> where) {
