@@ -9,7 +9,7 @@ import java.util.Map.Entry;
 
 // BEGIN
 class App {
-    public static void main(String[]args){
+    public static void main(String[]args) {
 
         List<Map<String, String>> books = new ArrayList<>();
 
@@ -44,19 +44,8 @@ class App {
     }
 
     public static boolean mapContainsMap(Map<String, String> map1, Map<String, String> map2) {
-        boolean contains = true;
 
-        for (Entry<String, String> entry : map1.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            if (!key.equals("title")) {
-                if (!map2.containsValue(value)) {
-                    contains = false;
-                }
-            }
-        }
-
-        return contains;
+        return  map1.entrySet().containsAll(map2.entrySet());
     }
 
     public static List<Map<String, String>> findWhere(List<Map<String, String>> books, Map<String, String> where) {
@@ -64,7 +53,7 @@ class App {
 
         Iterator<Map<String, String>> iterator = books.iterator();
 
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             Map<String, String> book = iterator.next();
             if (mapContainsMap(book, where)) {
                 selectedBooks.add(book);
