@@ -1,8 +1,8 @@
 package exercise;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.List;
-import java.util.Arrays;
+//import java.util.Arrays;
 
 // BEGIN
 class App {
@@ -31,13 +31,11 @@ class App {
 
     public static boolean isFreeDomain(String domain) {
         String[] path = domain.split("@");
-
-        if (path[path.length - 1].equals("gmail.com") ||
-                path[path.length - 1].equals("yandex.ru") ||
-                path[path.length - 1].equals("hotmail.com")) {
+        if (path[path.length - 1].equals("gmail.com")
+                || path[path.length - 1].equals("yandex.ru")
+                || path[path.length - 1].equals("hotmail.com")) {
             return true;
         }
-        
         return false;
     }
 
