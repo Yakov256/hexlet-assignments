@@ -15,7 +15,7 @@ class App {
         };
 
         //System.out.println(Arrays.deepToString(image));
-        //System.out.println(Arrays.deepToString(enlargeArrayImage(image)));
+        System.out.println(Arrays.deepToString(enlargeArrayImage(image)));
 
     }
 
@@ -31,7 +31,7 @@ class App {
     }
 
     public static String[][] enlargeArrayImage(String[][] strings) {
-        if(strings == null) {
+        if (strings == null) {
             return null;
         }
 

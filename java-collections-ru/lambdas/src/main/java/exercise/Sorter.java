@@ -1,7 +1,9 @@
 package exercise;
 
-import java.util.*;
-import java.time.LocalDate;
+import java.util.Map;
+import java.util.List;
+import java.util.HashMap;
+import java.util.Comparator;
 import java.util.stream.Collectors;
 
 // BEGIN
@@ -42,7 +44,7 @@ class Sorter {
     public static List<String> takeOldestMans(List<Map<String, String>> users) {
 
         List<Map<String, String>> sortedUsers = users.stream()
-                .filter(element-> element.get("gender").equals("male"))
+                .filter(element -> element.get("gender").equals("male"))
                 .sorted(Comparator.comparing(a -> a.get("birthday")))
                 .collect(Collectors.toList());
 
@@ -50,7 +52,7 @@ class Sorter {
 
 
         List<String> sortedUsersList = sortedUsers.stream()
-                .map(element-> element.get("name"))
+                .map(element -> element.get("name"))
                 .collect(Collectors.toList());
 
         System.out.println("2 - " + sortedUsersList);
