@@ -42,8 +42,8 @@ class App {
             String message = "";
             var map2CurrentValue = map2.get(entry.getKey());
 
-            if(map2CurrentValue != null) {
-                if(map2CurrentValue.equals(entry.getValue())) {
+            if (map2CurrentValue != null) {
+                if (map2CurrentValue.equals(entry.getValue())) {
                     message = "unchanged";
                 } else {
                     message = "changed";
