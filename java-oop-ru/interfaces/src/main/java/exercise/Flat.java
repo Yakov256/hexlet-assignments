@@ -17,7 +17,7 @@ class Flat implements Home {
         if (this.getArea() > another.getArea()) {
             return 1;
         } else if (this.getArea() < another.getArea()) {
-            return - 1;
+            return -1;
         } else {
             return 0;
         }
@@ -28,7 +28,7 @@ class Flat implements Home {
         return "Квартира площадью " + this.getArea() + " метров на " + floor + " этаже";
     }
 
-    public Flat(double area, double balconyArea, int floor) {
+    Flat(double area, double balconyArea, int floor) {
         this.area = area;
         this.balconyArea = balconyArea;
         this.floor = floor;

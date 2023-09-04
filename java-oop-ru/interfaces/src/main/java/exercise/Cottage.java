@@ -7,7 +7,7 @@ class Cottage implements Home {
 
     @Override
     public double getArea() {
-       return area;
+        return area;
     }
 
     @Override
@@ -15,13 +15,13 @@ class Cottage implements Home {
         if (this.getArea() > another.getArea()) {
             return 1;
         } else if (this.getArea() < another.getArea()) {
-            return - 1;
+            return -1;
         } else {
             return 0;
         }
     }
 
-    public Cottage(double area, int floorCount) {
+    Cottage(double area, int floorCount) {
         this.area = area;
         this.floorCount = floorCount;
     }

@@ -1,10 +1,9 @@
 package exercise;
 
-import java.util.Arrays;
 import java.util.stream.IntStream;
 
 // BEGIN
-class ReversedSequence implements CharSequence{
+class ReversedSequence implements CharSequence {
     //private String charSequence;
     private char[] charSequence;
 
@@ -42,7 +41,7 @@ class ReversedSequence implements CharSequence{
         return sb.toString();
     }
 
-    public ReversedSequence(String charSequence) {
+    ReversedSequence(String charSequence) {
         String reverse = new StringBuilder(charSequence).reverse().toString();
         this.charSequence = reverse.toCharArray();
     }
