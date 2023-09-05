@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 // BEGIN
-class FileKV implements KeyValueStorage{
+class FileKV implements KeyValueStorage {
 
     private Map<String, String> storage;
     private String filePath;
@@ -43,7 +43,7 @@ class FileKV implements KeyValueStorage{
         return storageCopy;
     }
 
-    public FileKV(String filePath, Map<String, String> map) {
+    FileKV(String filePath, Map<String, String> map) {
         this.storage = new HashMap<>(map);
         this.filePath = filePath;
     }
@@ -57,15 +57,3 @@ class FileKV implements KeyValueStorage{
     }
 }
 // END
-
-/* KeyValueStorage storage = new FileKV("src/test/resources/file", Map.of("key", "value"));
-         // Получение значения по ключу
-         storage.get("key", "default"); // "value"
-         ```
-В процессе работы вам потребуется выполнить сериализацию (представление данных в виде строки) и десериализацию словаря
- `Map`. Удобнее всего представлять словарь в виде JSON.
- Для этого в классе `Utils` уже написаны методы `Utils.serialize()` и `Utils.unserialize()`.
- Для чтения и записи файлов также имеются уже написанные методы `Utils.readFile()` и `Utils.writeFile()`.
-
-   * В файле  *src/test/java/exerciseFileKVTest* допишите тесты на эту реализацию базы данных.
-*/

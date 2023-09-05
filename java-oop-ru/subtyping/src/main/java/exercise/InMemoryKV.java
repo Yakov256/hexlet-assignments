@@ -33,11 +33,11 @@ class InMemoryKV implements KeyValueStorage {
         return storageCopy;
     }
 
-    public InMemoryKV() {
+    InMemoryKV() {
         this.storage = new HashMap<>();
     }
 
-    public InMemoryKV(Map<String, String> map) {
+    InMemoryKV(Map<String, String> map) {
         this.storage = new HashMap<>(map);
     }
 
