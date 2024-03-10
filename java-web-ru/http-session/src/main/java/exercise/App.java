@@ -11,12 +11,11 @@ public final class App {
     private static final List<Map<String, String>> USERS = Data.getUsers();
 
     static List<Map<String, String>> getPage(int page, int per) {
-        List<Map<String, String>> UsersList = Data.getUsers();
         List<Map<String, String>> newList = new ArrayList<>();
-        System.out.println(UsersList.size());
+        System.out.println(USERS.size());
 
-        for (int i = (per * page); i < (per * page + per); i++) {
-            newList.add(UsersList.get(i));
+        for (int i = (per * (page-1)); i < (per * (page-1) + per); i++) {
+            newList.add(USERS.get(i));
         }
 
         return newList;
@@ -38,14 +37,21 @@ public final class App {
             //ctx.queryParam("page");
         });*/
 
-        app.get("/users", ctx -> {
+        /*app.get("/users", ctx -> {
             var per = ctx.queryParamAsClass("per", Integer.class).getOrDefault(5);
             var page = ctx.queryParamAsClass("page", Integer.class).getOrDefault(1);
 
-            ctx.result("" + getPage(page,per));
+            ctx.result(objectMapper.writeValueAsString(getPage(page,per)));
+        });*/
 
+        System.out.println(USERS);
+
+        app.get("/users", ctx -> {
+            var per = ctx.queryParamAsClass("per", Integer.class).getOrDefault(5);
+            var page = ctx.queryParamAsClass("page", Integer.class).getOrDefault(1);
+            ctx.json(getPage(page,per));
         });
-        
+
         // END
 
         return app;
