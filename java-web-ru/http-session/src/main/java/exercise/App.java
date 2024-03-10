@@ -14,7 +14,7 @@ public final class App {
         List<Map<String, String>> newList = new ArrayList<>();
         System.out.println(USERS.size());
 
-        for (int i = (per * (page-1)); i < (per * (page-1) + per); i++) {
+        for (int i = (per * (page - 1)); i < (per * (page - 1) + per); i++) {
             newList.add(USERS.get(i));
         }
 
@@ -30,28 +30,11 @@ public final class App {
         });
 
         // BEGIN
-
-        /*app.get("/users", ctx -> {
-            var name = ctx.queryParamAsClass("name", String.class).getOrDefault("World");
-            ctx.result("Hello, " + name + "!" + "\n" + UsersList);
-            //ctx.queryParam("page");
-        });*/
-
-        /*app.get("/users", ctx -> {
-            var per = ctx.queryParamAsClass("per", Integer.class).getOrDefault(5);
-            var page = ctx.queryParamAsClass("page", Integer.class).getOrDefault(1);
-
-            ctx.result(objectMapper.writeValueAsString(getPage(page,per)));
-        });*/
-
-        System.out.println(USERS);
-
         app.get("/users", ctx -> {
             var per = ctx.queryParamAsClass("per", Integer.class).getOrDefault(5);
             var page = ctx.queryParamAsClass("page", Integer.class).getOrDefault(1);
-            ctx.json(getPage(page,per));
+            ctx.json(getPage(page, per));
         });
-
         // END
 
         return app;
