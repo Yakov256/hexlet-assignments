@@ -1,24 +1,20 @@
 @import exercise.dto.users.UsersPage
 @param UsersPage page
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hello Hexlet!</title>
-</head>
-<body>
-<div class="mx-auto p-4 py-md-5">
-    <main>
-        <a href="/users">Пользователи</a>
-
-            @for(var course : page.getCourses())
-                <div>
-                    <h2><a href="/users/${course.getId()}">${course.getFirstName()}</a></h2>
-                </div>
-            @endfor
-
-
-    </main>
-</div>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <div>
+            <main>
+                <a href="/users"><H2>Пользователи</H2></a>
+                    @for(var course : page.getCourses())
+                        <div>
+                            <a href="/users/${course.getId()}">${course.getFirstName() + " " + course.getLastName()}</a>
+                        </div>
+                    @endfor
+            </main>
+        </div>
+    </body>
 </html>
