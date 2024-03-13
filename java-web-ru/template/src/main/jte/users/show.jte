@@ -11,7 +11,7 @@
             <a href="/users">Пользователи</a>
         </main>
         <main>
-            <h2>${page.getUser().getFirstName() + " " + page.getUser().getLastName()}</h2>
+            <p>${page.getUser().getFirstName() + " " + page.getUser().getLastName()}</p>
             <p>${page.getUser().getId()}</p>
             <p>${page.getUser().getEmail()}</p>
         </main>
