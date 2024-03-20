@@ -5,7 +5,7 @@
 @template.layout.page(
 content = @`
     <main>
-        <h1>${page.getPost().getName()}</h1>
+        <h3>${page.getPost().getName()}</h3>
         <p>${page.getPost().getBody()}</p>
         <a href="${NamedRoutes.postsPath()}">Back to posts</a>
     </main>

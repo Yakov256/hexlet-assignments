@@ -19,18 +19,14 @@ public class PostsController {
     // BEGIN
     public static void index(Context ctx) {
         int postsPerPage = 5;
-        Integer currentPage = ctx.queryParamAsClass("page", Integer.class).getOrDefault(1);
-
+        Integer curPage = ctx.queryParamAsClass("page", Integer.class).getOrDefault(1);
         List<Post> posts = PostRepository.getEntities();
-
-        int startIndex = (currentPage - 1) * postsPerPage;
+        int startIndex = (curPage - 1) * postsPerPage;
         int endIndex = Math.min(startIndex + postsPerPage, posts.size());
-
         List<Post> postsOnPage = posts.subList(startIndex, endIndex);
-
         int totalPages = (int) Math.ceil((double) posts.size() / postsPerPage);
-        var page = new  exercise.dto.posts.PostsPage(postsOnPage, currentPage, totalPages,
-                currentPage > 1, endIndex < posts.size());
+        var page = new  exercise.dto.posts.PostsPage(postsOnPage, curPage, totalPages,
+                curPage > 1, endIndex < posts.size());
 
         ctx.render("posts/index.jte", Collections.singletonMap("page", page));
     }
@@ -66,12 +62,11 @@ public class PostsController {
 
     public static void update(Context ctx) {
         var id = ctx.pathParamAsClass("id", Long.class).get();
-
         var name = ctx.formParam("name");
         var body = ctx.formParam("email");
-
         var post = PostRepository.find(id)
                 .orElseThrow(() -> new NotFoundResponse("Entity with id = " + id + " not found"));
+
         post.setName(name);
         post.setBody(body);
         PostRepository.save(post);
